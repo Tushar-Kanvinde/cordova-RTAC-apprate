@@ -1,6 +1,9 @@
 # Changelog
 
 - Unreleased
+  - Nothing yet
+
+- v1.8.0
   - [PR #334](https://github.com/pushandplay/cordova-plugin-apprate/pull/334) - Migration from the Play Core Java
 
 - v1.7.3
