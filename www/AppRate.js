@@ -114,10 +114,6 @@ var AppRate = (function() {
         updateCounter('stop');
         break;
       case 2:
-        currentBtn = localeObj.laterButtonLabel;
-        updateCounter('reset');
-        break;
-      case 3:
         currentBtn = localeObj.rateButtonLabel;
         updateCounter('stop');
         AppRate.navigateToAppStore();
@@ -174,10 +170,9 @@ var AppRate = (function() {
           ((IS_IOS && preferences.reviewType.ios === 'InAppReview') || (IS_ANDROID && preferences.reviewType.android === 'InAppReview'))) {
         updateCounter('stop');
         AppRate.navigateToAppStore();
-      } else if (preferences.simpleMode) {
-        navigator.notification.confirm(localeObj.message, promptForStoreRatingWindowButtonClickHandler, localeObj.title, [localeObj.cancelButtonLabel, localeObj.laterButtonLabel, localeObj.rateButtonLabel]);
-      } else {
-        navigator.notification.confirm(localeObj.appRatePromptMessage, promptForAppRatingWindowButtonClickHandler, localeObj.appRatePromptTitle, [localeObj.noButtonLabel, localeObj.yesButtonLabel]);
+      }
+     else {
+        navigator.notification.confirm(localeObj.appRatePromptMessage, promptForStoreRatingWindowButtonClickHandler, localeObj.appRatePromptTitle, [localeObj.cancelButtonLabel, localeObj.rateButtonLabel]);
       }
 
       var base = preferences.callbacks;
